@@ -1,0 +1,24 @@
+#
+# before_install
+# install
+# before_script
+# script
+# after_failure
+# after_success
+# after_script
+# env (though not yet excludes/includes or language-specific axes)
+#
+#
+#
+#
+env:
+  - env
+before_install:
+  - echo "before_install"
+install:
+  - echo pants
+  - echo foo
+
+script: ls
+
+foo: bar
