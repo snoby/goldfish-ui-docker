@@ -16,9 +16,19 @@ env:
 before_install:
   - echo "before_install"
 install:
-  - echo pants
-  - echo foo
+  - echo "Install"
+  - docker ps
 
-script: ls
+before_script:
+  - echo "Before_script"
+
+
+script:
+  - echo script
+  - ls
+  - docker build -t test .
+
+after_success:
+  - echo "successful build deploying"
 
 foo: bar
